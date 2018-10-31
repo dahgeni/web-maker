@@ -1,24 +1,24 @@
 <!--navbar-->
 <nav class="navbar-light fixed-top bg-light">
-    <a class="color-black" href="widget-list.html"><i class="fas fa-chevron-left padding-left"></i></a> 
-    <a class="navbar-brand padding-left" href="widget-chooser.html">Choose Widgets</a>
+    <a class="color-black" routerLink="/user/:uid/website/:wid/page/pid/widget"><i class="fas fa-chevron-left padding-left"></i></a> 
+    <a class="navbar-brand padding-left" routerLink="/user/:uid/website/:wid/page/pid/widget">Choose Widgets</a>
     
     </nav>
 
 <!--list-->
 <div class="container">
   <ul class="list-group-flush">
-      <li class="list-group-item"><a href="widget-heading.html"> Heading</a></li>
-      <li class="list-group-item"><a href="#"> Label</li>
-      <li class="list-group-item"><a href="#"> Html</li>
-      <li class="list-group-item"><a href="#"> Text Input</li>
-      <li class="list-group-item"><a href="#"> Link</li>
-      <li class="list-group-item"><a href="#"> Button</li>
-      <li class="list-group-item"><a href="widget-image.html"> Image</li>
-      <li class="list-group-item"><a href="widget-youtube.html">Youtube</a> </li>
-      <li class="list-group-item"><a href="#"> Data table</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Heading</a></li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Label</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Html</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Text Input</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Link</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Button</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Image</li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid">Youtube</a> </li>
+      <li class="list-group-item"><a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Data table</li>
       <li class="list-group-item">
-            <a href="#"> Repeater</li>
+      <a routerLink="/user/:uid/website/wid/pid/widget/:wgid"> Repeater</li>
 
   </ul>
 
@@ -28,7 +28,7 @@
 bg-light">
 <div class="full-width">
   <a class="color-black float-right"
-  href="../user/profile.html"><i class="fas fa-user"> </i></a>
+  routerLink="/user/:uid"><i class="fas fa-user"> </i></a>
   </div>
 
 </footer>

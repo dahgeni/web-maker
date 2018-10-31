@@ -39,7 +39,6 @@ import { WidgetYoutubeComponent } from './components/widget/widget-edit/widget-y
   ],
   imports: [
     BrowserModule, Routing],
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,9 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg- light">
-    <a class="color-black" href="widget-list.html"><i class="fas fa-chevron-left"></i></a> 
-    <a class="navbar-brand"  href="widget-heading.html">Edit Widget</a>
-    <a class="color-black"href="widget-list.html"><i class="fas fa-check"></i></a>
-</nav>
+    <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-chevron-left"></i></a> 
+    <a class="navbar-brand"  routerLink="/user/:uid/website/:wid/page/widget/wgid">Edit Widget</a>
+   <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-check"></i></a>
+    </nav>
 <!--form-->
 <div class="container">
     <!--name-->
@@ -28,13 +28,13 @@
                 <input type="text" id="upload" class="form-control">
             </div>   
         <a href="#" class="btn btn-primary btn-block">Upload Image</a>          
-        <a href="Widget-list.html" class="btn btn-danger btn-block">Delete</a>
+        <a routerLink="/user/:uid/page/pid/widget" class="btn btn-danger btn-block">Delete</a>
     </form>
 </div>
 
 <!--footer-->
 <footer class="navbar navbar-light fixed-bottom bg-light">
     <div class="full-width">
-        <a class="color-black float-right" href="../user/profile.html"><i class="fas fa-user"> </i></a>
+        <a class="color-black float-right" routerLink="/user/:uid"><i class="fas fa-user"> </i></a>
     </div>
 </footer>

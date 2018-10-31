@@ -29,7 +29,7 @@ const APP_ROUTES : Routes = [
  { path : "user/:userId/website" , component: WebsiteListComponent },
  { path : "user/:uid/website/new" , component: WebsiteNewComponent },
  { path : "user/:uid/website/:wid" , component: WebsiteEditComponent },               
- { path : "user/:uid/website/:wid/page", component: PagelistComponent },              
+ { path : "user/:uid/website/:wid/page", component: PageListComponent },              
  { path : "user/:uid/website/:wid/page/new", component: PageNewComponent},  
  { path : "user/:uid/website/:wid/page/:pid" , component: PageEditComponent},
  { path : "user/:uid/website/:wid/page/:pid/widget", component: WidgetListComponent},

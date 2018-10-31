@@ -1,8 +1,8 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg light">
-    <a class="color-black" href="page-list.html"><i class="fas fa-chevron-left"></i></a> 
-    <a class="navbar-brand" href="page-new.html">New Page</a>
-    <a class="color-black"href="page-list.html"><i class="fas fa-check"></i></a> 
+    <a class="color-black" routerLink="/user/:uid/website/:uid/page"><i class="fas fa-chevron-left"></i></a> 
+    <a class="navbar-brand" routerLink="/user/:uid/website/:uid/page/new">New Page</a>
+    <a class="color-black" routerLink="/user/:uid/website/:uid/page"><i class="fas fa-check"></i></a> 
     </nav>
     <!--form-->
     <div class="container">
@@ -15,8 +15,8 @@
                 <input class="form-control" type="text page...">
 
             </div>
-            <a href='page-list.html' class="btn btn-lg btn-warning">Cancel</a>
-            <a href= "page-list.html"class="btn btn-lg btn-success float-right">Submit</a>
+            <a routerLink="/user/:uid/website/:uid/page" class="btn btn-lg btn-warning">Cancel</a>
+            <a routerLink="/user/:uid/website/:uid/page"class="btn btn-lg btn-success float-right">Submit</a>
            
         </form>
         </div>
@@ -25,7 +25,7 @@
 bg-light">
 <div class="full-width">
 <a class="color-black float-right"
-href="../user/profile.html"><i class="fas fa-user"> </i></a>
+href="/user/:uid"><i class="fas fa-user"> </i></a>
 </div>
 
 </footer>
