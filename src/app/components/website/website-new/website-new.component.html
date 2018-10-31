@@ -1,3 +1,78 @@
-<p>
-  website-new works!
-</p>
+ <!--navbar-->
+ <nav class="navbar navbar-dark bg-primary fixed-top
+ row nav-height">
+ <!--left nav-->
+ <div class="col-4 d-none d-sm-block">
+    <a class="color-white"routerLink="/user/:uid/website"><i class="fas fa-chevron-left"></i> </a>
+       <a class="color-white padding-left" routerLink="/user/:uid/website/new"><h5 class='display-inline' ></h5>Website</h5></a> 
+       <a class="color-white float-right" routerLink=/user/uid/website/new><i class="fas fa-plus"></i></a>
+     
+ </div>
+ <!--right nav-->
+ <div class="col-sm-8">
+       <a class="color-white d-sm-none" routerLink="/user/:uid/website"><i class="fas fa-chevron-left"></i></a><h5 class="display-inline">New Website</h5></a>  
+       <a class="color-white float-right"routerlink="/user/:uid/website"><i class="fas fa-check"></i></a>
+       
+
+ </div>
+ </nav>
+ <!--list and forms-->
+ <div class="row">
+     <!--left list-->
+     <div class="col-4 d-none d-sm-block">
+       <div class="container-fluid"> 
+           <ul class="list-group">
+               <ul class="list-group">
+                   <li class="list-group-item">
+                        <a routerLink="/user/:uid/website/:wid/page">Address Book App</a>
+                        <a class="float-right" routerLink="/user/:uid/website/:wid/page"><i class="fas fa-cog"></i> </li></a>
+           
+                       <li class="list-group-item">
+                        <a routerLink="/user/:uid/website/:wid/page">Blogger</a>
+                        <a class="float-right" routerLink="/user/:uid/website/:wid/page"><i class="fas fa-cog"></i> </li></a>
+                        <li class="list-group-item">
+                               <a routerlink="/user/:uid/website/:wid/page">Bloging App</a>
+                               <a class="float-right" routerlink="/user/:uid/website/:wid/page"><i class="fas fa-cog"></i> </li></a>
+                         <li class="list-group-item">
+                        <a routerLink="/user/:uid/website/:wid/page">Script testing App
+                        <a class="float-right" RouterLink="/user/:uid/website/:wid/page"><i class="fas fa-cog"></i> </li></a>
+                        </li>
+                       </ul>
+                   </div>
+     </div>
+     <!--right form-->
+           <div class="col-sm-8">
+         <div class="container-fluid">
+         <form>
+             <div class='form-group'>
+                 <label>
+                 <b>Name</b></label>
+                 <input id="name"
+                 class="form-control"
+                 type="text"
+                 placeholder="name of the website">
+             </div>
+             <div class='form-group'>
+                 <label>
+                  <b>Discription</b></label>
+                 <textarea id="discription" row="5"class="form-control"type= "text" placeholder="Describe your Website"></textarea>
+                 
+             </div>
+             <a href="/user/uid/website" class="btn btn-lg btn-warning"><b>Cancel</b>
+                 <a routerLink="/user/uid/website" class="btn btn-lg btn-success float-right"><b>Submit</b>
+             </a>
+             </form>
+
+             </div>
+          
+
+            <!--footer-->
+            <footer class="navbar navbar-dark fixed-bottom
+            bg-primary">
+            <div class="full-width">
+                <a class="color-black float-right"
+                routerLink="/user/:uid"><i class="fas fa-user"> </i></a>
+                </div>
+          
+          </footer>
+       

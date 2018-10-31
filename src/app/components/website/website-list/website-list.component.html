@@ -1,3 +1,39 @@
-<p>
-  website-list works!
-</p>
+ <!--navbar-->
+ <nav class="navbar fixed-top navbar-dark bg-primary">    
+    <a class="color-white"routerLink="/user/:uid"><i class="fas fa-chevron-left"></i> </a>
+    <div class="sw-90-width">
+    <a class="navbar-brand float-left" routerLink="/user/:uid/website"><b>Website</b></a> 
+    </div>
+    <a class="color-white"routerlink="/user/:uid/website/new"><i class="fas fa-plus"></i></a>  
+  </nav>
+  <!--website list--> 
+  <div class="container-fluid">
+  <ul class="list-group">
+      <li class="list-group-item">
+           <a routerlink="/user/:uid/website/:uid/page">Address Book App</a>
+           <a class="float-right" routerLink="/user/:uid/website/:wid"><i class="fas fa-cog"></i> </li></a>
+
+          <li class="list-group-item">
+           <a routerlink="/user/:uid/website/:uid/page">Blogger</a>
+           <a class="float-right" routerlink="/user/:uid/website/:wid"><i class="fas fa-cog"></i> </li></a>
+           <li class="list-group-item">
+                  <a routerLink="/user/:uid/website/:uid/page">Bloging App</a>
+                  <a class="float-right" routerlink="/user/:uid/website/:wid"><i class="fas fa-cog"></i> </li></a>
+            <li class="list-group-item">
+           <a routerlink="/user/:uid/website/:uid/page">Script testing App
+           <a class="float-right" routerlink="/user/:uid/website/:wid"><i class="fas fa-cog"></i> </li></a>
+              
+  </ul>
+  </div>
+
+  <!--footer-->
+
+  <footer class="navbar navbar-dark fixed-bottom
+bg-primary">
+<div class="full-width">
+    <a class="color-black float-right"
+    routerlink="/user/:uid"><i class="fas fa-user"> </i></a>
+    </div>
+
+</footer>
+
