@@ -1,22 +1,25 @@
-<div class= "container fluid">
+<div class= "container ">
         <h1>Register</h1>
-        <form>
+        <form (ngSubmit)="register()" #myform="ngform">
+                <div *ngIf="userError" class="alert alert-danger"> this Username is taken, please try nother one</div>
+                <div *ngIf="passwordError" class="alert alert-danger"> two password are not matched></div>
             <div class="form-group">
-                <input class="form-control" type="text" 
-                placeholder="username">
+            
+                <input [(ngModel)]="username" name="username" required name="username" class="form-control" type="text" 
+                placeholder="username" #userInput="ngModel">
             </div>
-           
+           <div *ngIf="userInput.invalid && userinput.touched" class="alert alert-warning">Username cannot be empty</div>
             <div class="form-group">
-                <input class="form-control" type="password"
+                <input class="form-control" required name="password"[(ngModel)] type="password"
                 placeholder="password">
             </div>
-
+            <div *ngIf="passwordInput.invalid && userinput.touched" class="alert alert-warning">Please Enter Your Password</div>
                 <div class="form-group">
-                    <input class="form-control" type="password" 
-                    placeholder="verify password">
+                    <input class="form-control" required name="verifyPassword" [(ngMode])] = "verifyPassword" type="password" 
+                    placeholder="verify password" #verifyPasswordInput="ngModel">
                 </div>
-                          
-            <a routerLink="/user/:uid" class="btn btn-primary btn-block">Register</a>
+            <div *ngIf="userInput.invalid && userinput.touched" class="alert alert-warning">Please Enter your Password Again</div>             
+            <button type="submit" [disabled]="myform.invalid"class="btn btn-primary btn-block">Register</button>
             <a routerlink="/login" class="btn btn-success btn-block">Cancel</a>
             
             

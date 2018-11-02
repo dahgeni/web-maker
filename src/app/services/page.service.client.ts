@@ -25,7 +25,7 @@ pages = [
   ]
 
   createPage(page) {
-      page._id = Math.random().toString;
+      page._id = Math.random().toString();
       this.pages.push(page);
       return page;
   }
