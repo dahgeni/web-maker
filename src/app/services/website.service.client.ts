@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class WebsiteService {
+  findWebsitesByUser(uid: any): any {
+    throw new Error("Method not implemented.");
+  }
     constructor() {}
  
    websites = [
@@ -55,7 +58,7 @@ export class WebsiteService {
      findWebsiteByUser(userId) {
          let result = [];
             for (let i =0; i< this.websites.length; i ++) {
-                if((this.websites[i].developerId = userId)) {
+                if((this.websites[i].developerId === userId)) {
                   result.push(this.websites[i]);          
                 }
             }

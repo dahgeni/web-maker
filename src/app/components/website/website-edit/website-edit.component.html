@@ -3,19 +3,18 @@
  row nav-height">
  <!--left nav-->
  <div class="col-4 d-none d-sm-block">
-    <a class="color-white"routerLink="/user/:uid/website/:wid"><i class="fas fa-chevron-left"></i> </a>
-       <a class="color-white padding-left" routerLink="/user/:uid/website/:wid"><h5 class='display-inline' ></h5>Website</a> 
-       <a class="color-white float-right" routerLink="/user/:uid/website/new"><i class="fas fa-plus"></i></a>
+    <a class="color-white"routerLink="/user/{{uid}}/website/:wid"><i class="fas fa-chevron-left"></i> </a>
+       <a class="color-white padding-left" routerLink="/user/{[uid]}/website/{{wid}}"><h5 class='display-inline' ></h5>Website</a> 
+       <a class="color-white float-right" routerLink="/user/{{uid}}/website/new"><i class="fas fa-plus"></i></a>
      
  </div>
  <!--right nav-->
  <div class="col-sm-8">
-       <a class="color-white d-sm-none" routerLink="/user/:uid/website"><i class="fas fa-chevron-left"></i></a>
-        <a class="color-white padding-left" routerLink="/user/:uid/website/wid"><i class="fas fa-check"></i></a>
+       <a class="color-white d-sm-none" routerLink="/user/{{uid}}/website"><i class="fas fa-chevron-left"></i></a>
+        <a class="color-white padding-left" routerLink="/user/{{uid}}/website/{{wid}}"><i class="fas fa-check"></i></a>
         <h5 class="diplay-inline">Edit Website</h5>
-        <a class="color-white float-right" routerlink="/user/:uid/website"><i class="fas fa-check"></i></a>
-
-       
+        <Button class="color-white float-right btn bg-transparent"><i class="fas fa-check"></i></Button>
+      
 
  </div>
  </nav>
@@ -25,48 +24,38 @@
      <div class="col-4 d-none d-sm-block">
        <div class="container-fluid"> 
            <ul class="list-group">
-               <ul class="list-group">
-                   <li class="list-group-item">
-                        <a routerLink="/user/:uid/webiste/:wid/page">Address Book App</a>
-                        <a class="float-right" href="website.edit.html"><i class="fas fa-cog"></i></a> </li>
-           
-                       <li class="list-group-item">
-                        <a routerLink="/user/:uid/webiste/:wid/page">Blogger</a>
-                        <a class="float-right" routerLink="/user/:uid/website/:wid"><i class="fas fa-cog"></i></a>
-                        </li>
-                        <li class="list-group-item">
-                               <a routerLink="/user/:uid/webiste/:wid/page">Bloging App</a>
-                               <a class="float-right" routerLink="/user/:uid/website/:wid"><i class="fas fa-cog"></i></a> </li>
-                         <li class="list-group-item">
-                        <a routerLink="/user/:uid/webiste/:wid/page">Script testing App
-                            </a></li>
-                       </ul>
-                       </ul>
-                   </div>
+                <li class="list-group-item" *ngFor="let website of websites"> 
+                <a uterLink="/user/{{uid}}/webiste/:wid/page">{{website.name}}</a>
+                 <a class="float-right" href="website.edit.html"><i class="fas fa-cog"></i></a> 
+                </li>     
+                      
+            </ul>
+          
+         </div>
      </div>
 
      <!--right form-->
            <div class="col-sm-8">
          <div class="container-fluid">
-         <form>
-             <div class='form-group'>
+         <form id="myform" myForm="ngForm" (ngSubmit)="update()"> 
+             <div class="form-group">
                  <label>
                  <b>Name</b></label>
                  <input id="name"
                  class="form-control"
                  type="text"
                  placeholder="name of the website"
-                 value="blogger">
+                [(ngModel)]="website.name" name="name">
                  
              </div>
              <div class='form-group'>
-                 <label>
+                 <label for="description" id="description">
                   <b>Discription</b></label>
-                 <textarea id="discription" row="5"class="form-control"type= "text" placeholder="Describe your Website">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora excepturi ducimus quos eveniet exercitationem qui eligendi rem quasi odit aut perspiciatis iusto animi consequuntur, optio sed asperiores incidunt labore pariatur!</textarea>
+                 <textarea [(ngModelid="website.discription" name="description" id="description"row="5"class="form-control"type= "text" placeholder="Describe your Website"></textarea>
                  
              </div>
-             <a routerlink="/user/:uid/website" class="btn btn-lg btn-warning"><b>Cancel</b></a>
-              <a routerlink="/user/:uid/website"class="btn btn-lg btn-danger float-right"><b>Delete</b>
+             <a routerlink="/user/{{uid}}/website" class="btn btn-lg btn-warning"><b>Cancel</b></a>
+              <button type="button"(click)="delete()" class="btn btn-lg btn-danger float-right">>Delete</button>
              </a>
              </form>
              </div>
@@ -77,7 +66,7 @@
             bg-primary">
             <div class="full-width">
                 <a class="color-black float-right"
-                routerLink="/user/:uid"><i class="fas fa-user"> </i></a>
+                routerLink="/user/{{:uid}}"><i class="fas fa-user"> </i></a>
                 </div>
           
           </footer>
