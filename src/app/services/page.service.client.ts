@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class PageService {
+  findPagesbyWebsiteId(wid: string): any[] {
+    throw new Error("Method not implemented.");
+  }
 
  
 pages = [
@@ -9,17 +12,17 @@ pages = [
    { _id: "321",
      name: "Post 1", 
      websiteId: "456",
-     description: "Lorem"
+     title: "Lorem"
    },
   
    { _id: "432", name: "Post 2",
     websiteId: "456",  
-    description: "Lorem" },
+    title: "Lorem" },
   
    { _id: "543",
     name: "Post 3",
     websiteId: "456",
-    description: "Lorem" 
+    title: "Lorem" 
 }
   
   ]
@@ -30,7 +33,7 @@ pages = [
       return page;
   }
 
-  findpagebywebsiteId(websiteId) {
+  findpagesbywebsiteId(websiteId) {
       let result = [];
       for(let i = 0; i < this.pages.length; i ++) {
          if(this.pages[i].websiteId) {
