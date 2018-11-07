@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WidgetService } from 'src/app/services/widget.service.client';
 
 @Component({
@@ -12,11 +12,15 @@ export class WidgetListComponent implements OnInit {
   wid: string;
   pid: string;
   widgets: any[];
+  sanitizer: any;
 
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private widgetService: WidgetService
+    private widgetService: WidgetService,
+    private router: Router
+   
+    
 
   ) { }
 
@@ -29,5 +33,12 @@ export class WidgetListComponent implements OnInit {
 
     });
   }
-
+parseYoutubeSrc(src) {
+  //transfer video url into embeded wideo url
+  let embedUrl = "http://www.youtube.com/embed/";
+  const splitUrl = src.split('/');
+  embedUrl += splitUrl[splitUrl.length -1];
+  //telling the browser this src is safe
+  return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl)
+}
 }

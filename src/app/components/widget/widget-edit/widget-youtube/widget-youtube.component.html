@@ -1,39 +1,36 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg- light">
     <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-chevron-left"></i></a> 
-    <a class="navbar-brand"  routerLink="/user/:uid/website/:wid/page/widget/wgid">Edit Widget</a>
-   <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-check"></i></a>
+    <a class="navbar-brand"  routerLink="/user/{{uid}}/website/{{wid}}/page/widget/{{wgid}}">Edit Widget</a>
+   <button class="color-black btn bg-transparent" form="myForm" type="submit"><i class="fas fa-check"></i></button>
     </nav>
 <!--form-->
 <div class="container">
     <!--name-->
-    <form>
+    <form id="myForm" #myForm= "ngform" (ngSubmit)="update()">
         <div class="from-group">
             <label for="name"><b>Name</b></label>
-            <input type="text" id="name" class="form-control">
+            <input name="name"placeholder="Image Name" [(ngModel)]="widget.name" type="text" id="name" class="form-control">
         </div>
         <!--url-->
         <div class="from-group">
-            <label for="url"><b>Url</b></label>
-            <input type="text" id="url" class="form-control">
+            <label for="url">Url<b>Url</b></label>
+            <input placeholder="Imgae Url" [(ngmodel)]="widget.url" type="text" id="url" class="form-control">
         </div>           
         <!--width-->
         <div class="from-group">
             <label for="width"><b>Width</b></label>
-            <input type="text" id="width" class="form-control">
+            <input [(ngModel)]="widget.width"name="width" placeholer="Image Width" name="width"placeholder="Image Widget" type="text" id="width" class="form-control">
         </div>   
-        <div class="from-group">
-                <label for="upload"><b>Upload</b>
-                    </label>
-                <input type="text" id="upload" class="form-control">
+        <button type="button" (click)="delete()" class= "btn btn-danger btn-block">Delete</button>
             </div>   
-        <a href="#" class="btn btn-primary btn-block">Upload Image</a>          
-        <a routerLink="/user/:uid/page/pid/widget" class="btn btn-danger btn-block">Delete</a>
+        
     </form>
+</div>
 
 <!--footer-->
-<nav class="navbar navbar-light fixed-bottom bg-light">
+<footer class="navbar navbar-light fixed-bottom bg-light">
     <div class="full-width">
-        <a class="color-black float-right" routerLink="/user/:uid"><i class="fas fa-user"> </i></a>
+        <a class="color-black float-right" routerLink="/user/{{uid}}"><i class="fas fa-user"> </i></a>
     </div>
-    </nav>
+</footer>

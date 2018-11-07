@@ -47,8 +47,12 @@
                 </div>
                 <div *ngSwitchCase="'IMAGE'">
                     <img [src]="widget.url" [style.width]="widget.width" />
-
                    </div> 
+                   <div *ngSwitchCase="'YOUTUBE'">
+                       <div class="embed-responsive embed-responsive-16By9"></div>
+                       <iframe [src]="parseYoutubeSrc(widget.url)" [style.width]= "widget.width" allowfullscreen></iframe>
+
+                   </div>
                  </div>          
                 </div>
               </div> 

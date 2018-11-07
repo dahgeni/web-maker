@@ -39,3 +39,6 @@ body{
      right: 15px;
      z-index: 2;
  }
+ .pointer {
+     cursor: pointer;
+ }
