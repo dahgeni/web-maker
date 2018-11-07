@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service.client';
 import { Router } from "@angular/router";
+import { User } from 'src/app/models/user.model.client';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-register',
@@ -24,15 +26,17 @@ export class RegisterComponent implements OnInit {
   }
   register() {
     if(this.password === this.verifyPassword){ 
-        const user = this.userService.findUserByUsername(this.username);
+        const user: User = this.userService.findUserByUsername(this.username);
         if(user){
           this.userError = true;
           this.passwordError= false;
         } else {
-          const newUser ={
+          const newUser: User ={
             username: this.username,
             password:this.password,
-            verifyPassword: this.verifyPassword
+            firstName: "",
+            lastName: "",
+            email: ""
           };
          const currentUser = this.userService.createUser(newUser);
          this.router.navigate(["user", currentUser._id]);
