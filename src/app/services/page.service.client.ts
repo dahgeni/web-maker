@@ -31,7 +31,7 @@ pages: Page[] = [
       return page;
   }
 
-  findpagesbywebsiteId(websiteId: string) {
+  findPagesByWebsiteId(websiteId: string) {
       let result = [];
       for(let i = 0; i < this.pages.length; i ++) {
          if(this.pages[i].websiteId) {

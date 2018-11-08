@@ -7,24 +7,22 @@
 <!--form-->
 <div class="container">
     <!--name-->
-    <form id="myForm" #myForm= "ngform" (ngSubmit)="update()">
-        <div class="from-group">
+    <form id="myForm" #myForm= "ngForm" (ngSubmit)="update()">
+        <div class="form-group">
             <label for="name"><b>Name</b></label>
             <input name="name"placeholder="Image Name" [(ngModel)]="widget.name" type="text" id="name" class="form-control">
         </div>
         <!--url-->
-        <div class="from-group">
+        <div class="form-group">
             <label for="url">Url<b>Url</b></label>
-            <input placeholder="Imgae Url" [(ngmodel)]="widget.url" type="text" id="url" class="form-control">
+            <input placeholder="Image Url" [(ngModel)]="widget.url" type="text" id="url" class="form-control">
         </div>           
         <!--width-->
-        <div class="from-group">
+        <div class="form-group">
             <label for="width"><b>Width</b></label>
             <input [(ngModel)]="widget.width"name="width" placeholer="Image Width" name="width"placeholder="Image Widget" type="text" id="width" class="form-control">
         </div>   
-        <button type="button" (click)="delete()" class= "btn btn-danger btn-block">Delete</button>
-            </div>   
-        
+        <button type="button" (click)="delete()" class= "btn btn-danger btn-block">Delete</button>        
     </form>
 </div>
 

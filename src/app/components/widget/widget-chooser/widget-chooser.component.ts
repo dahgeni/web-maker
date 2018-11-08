@@ -35,11 +35,10 @@ create(type: string) {
   const widget: Widget = {
     widgetType: type,
     pageId: this.pid
-
   };
   this.widgetService.createWidget(widget);
 
-  const wgid: string = this.widgetService.widgets[this.widgetService.widgets.length -1]._id;
+  const wgid: string = this.widgetService.widgets[this.widgetService.widgets.length - 1]._id;
 this.router.navigate
 (["usr",
 this.uid,

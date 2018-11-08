@@ -12,7 +12,6 @@ export class WebsiteEditComponent implements OnInit {
   uid: string;
   wid: string;
   website: Website;
-  
 
   constructor( 
     private websiteService: WebsiteService, 
@@ -24,7 +23,7 @@ export class WebsiteEditComponent implements OnInit {
       this.uid = params["uid"];
       this.wid = params["wid"];
       this.websites =this.websiteService.findWebsitesByUser(this.uid);
-      this.website = this.websiteService.findwebsiteById(this.uid);
+      this.website = this.websiteService.findWebsiteById(this.wid);
    });
   }
 update() {

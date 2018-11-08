@@ -54,7 +54,7 @@ export class WebsiteService {
           this.websites.push(website);
           return website;
      }
-     findWebsiteByUser(userId) {
+     findWebsitesByUser(userId) {
          let result = [];
             for (let i =0; i< this.websites.length; i ++) {
                 if((this.websites[i].developerId === userId)) {
@@ -63,7 +63,7 @@ export class WebsiteService {
             }
             return result;
          }
-  findwebsiteById(websiteId: String) {
+  findWebsiteById(websiteId: String) {
       for (let i = 0; i < this.websites.length; i++) {
             if(this.websites[i]._id === websiteId) {
                 return this.websites[i];
@@ -72,12 +72,12 @@ export class WebsiteService {
   
     }
      updateWebsite(website: Website) {
-         const oldWeb = this.findwebsiteById(website._id);
+         const oldWeb = this.findWebsiteById(website._id);
          const index = this.websites.indexOf(oldWeb);
          this.websites[index] = website;
      }  
      deleteWebsite(websiteId) {
-          const website = this.findwebsiteById(websiteId);
+          const website = this.findWebsiteById(websiteId);
           const index = this.websites.indexOf(website);
           this.websites.splice(index, 1);
      }

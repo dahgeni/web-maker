@@ -5,7 +5,7 @@ import { Widget } from '../models/widget.model.client';
 
 @Injectable()
 export class WidgetService {
-    widgets: Widget =  [
+    widgets: Widget[] =  [
         { 
            _id: "123",
          widgetType: "HEADING",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsiteService } from 'src/app/services/website.service.client';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Website } from 'src/app/models/website.model.client';
 
  
 @Component({
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./website-new.component.css']
 })
 export class WebsiteNewComponent implements OnInit {
-  websites: Website[];
+  websites: Website [];
   uid: string;
   name: string;
   description: string;

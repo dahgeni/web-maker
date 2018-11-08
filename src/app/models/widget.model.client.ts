@@ -1,9 +1,9 @@
 export class Widget {
-    _id: string;
-    widgettype: string;
+    _id?: string;
+    widgetType: string;
     pageId: string;
     text?: string;
-    size?: string;
+    size?: number;
     width?: string;
     url?: string;
 }

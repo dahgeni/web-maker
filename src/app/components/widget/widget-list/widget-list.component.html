@@ -3,7 +3,7 @@
     <nav class="navbar navbar-light fixed-top bg- light">
         <a class="color-black" routerLink="/user/{{uid}}/website/{{wid}}/page"><i class="fas fa-chevron-left"></i></a> 
         <a class="navbar-brand" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/Widgets">Widgets</a>
-       <a class="color-black"routerlink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new"><i class="fas fa-plus"></i></a> 
+       <a class="color-black"routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new"><i class="fas fa-plus"></i></a> 
             </nav>
 
     <!--main content-->
@@ -19,28 +19,28 @@
                 </div>
                        <!--Content-->
             <div [ngSwitch]="widget.widgetType">
-                <div *ngSwichCase="'HEADING'">
+                <div *ngSwitchCase="'HEADING'">
                     <div [ngSwitch]="widget.size">
-                        <div *ngSwitchcase="1">
+                        <div *ngSwitchCase="1">
                            <h1>{{widget.text}}</h1>
                         </div>
-                        <div *ngSwitchcase="2">
+                        <div *ngSwitchCase="2">
                            <h2>{{widget.text}}</h2>
                         </div>
-                          <div *ngSwitchcase="2">
+                          <div *ngSwitchCase="2">
                              <h2>{{widget.text}}</h2>
                          </div>
-                             <div *ngSwitchcase="3">
+                             <div *ngSwitchCase="3">
                               <h3>{{widget.text}}</h3>
                          </div>   
-                            <div *ngSwitchcase="4">
+                            <div *ngSwitchCase="4">
                              <h4>{{widget.text}}</h4>
                          </div>    
-                              <div *ngSwitchcase="5">
+                              <div *ngSwitchCase="5">
                                <h5>{{widget.text}}</h5>
                           </div> 
                              <div 
-                              ngSwitchcase="6">
+                              ngSwitchCase="6">
                                <h6>{{widget.text}}</h6>
                           </div>              
                     </div>

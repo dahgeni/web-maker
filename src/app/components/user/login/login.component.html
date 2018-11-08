@@ -1,24 +1,22 @@
 <div class= "container">
-    <h1>login</h1>
-    <form ngSubmit="login()" #myform="ngform">
-        <div *ngIf="errorflag"class="alert alert-danger">the username and password do not match our records; please try again</div>
+    <h1>Login</h1>
+
+    <form (ngSubmit)="login()" #myForm="ngForm">
+        <div *ngIf="errorFlag" class="alert alert-danger">the username and password do not match our records; please try again</div>
 
         <div class="form-group">
-            <input class="form-control" required name="username"[(ngModel)]="username" type="text" 
-            placeholder="username" #userInput="ngModel">
+            <input class="form-control" required name="username" [(ngModel)]="username" type="text" placeholder="username" #userInput="ngModel">
         </div>
-       <div *ngif="userInput.invalid && userinput.touched"class="alert alert-warning">Please Enter Unsername</div> 
+
+        <div *ngIf="userInput.invalid && userInput.touched"class="alert alert-warning">Please Enter Unsername</div> 
         
-       <div class="form-group">
-            <input class="form-control" required name="password" [(ngModel)]="password" type="password"
-            placeholder="password" #passwordInput="ngModel">
+        <div class="form-group">
+            <input class="form-control" required name="password" [(ngModel)]="password" type="password" placeholder="password" #passwordInput="ngModel">
         </div>
-        <div *ngIf="passwordInput.invalid && passwordInput.touched"class="alert alert-warning">Please Enter Password</div>
-        <button [disabled]="myform.invalid" type= "submit" class="btn btn-primary btn-block">login</button>
-        <a routerlink="/register" class="btn btn-success btn-block">Register</a>
-        
-        
+
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="alert alert-warning">Please Enter Password</div>
+        <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary btn-block">Login</button>
+        <a routerLink="/register" class="btn btn-success btn-block">Register</a>
 
     </form>
-
 </div>
