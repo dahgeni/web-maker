@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
  
 login() {
-  const user: User = this.userService.findUserByCredentials(   this.username,
+  const user : User = this.userService.findUserByCredentials(   this.username,
       this.password);
        
     if(user ) {

@@ -1,5 +1,5 @@
-export class website {
-    _id: string;
+export class Website {
+    _id?: string;
     name: string;
     developerId: string;
     description;

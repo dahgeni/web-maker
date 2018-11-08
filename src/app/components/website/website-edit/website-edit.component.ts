@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsiteService } from 'src/app/services/website.service.client';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Website } from 'src/app/models/website.model.client';
 @Component({
   selector: 'app-website-edit',
   templateUrl: './website-edit.component.html',
   styleUrls: ['./website-edit.component.css']
 })
 export class WebsiteEditComponent implements OnInit {
-  websites: any[];
+  websites: Website[];
   uid: string;
-   wid: string;
-  decription: string;
-  website;
+  wid: string;
+  website: Website;
+  
 
   constructor( 
     private websiteService: WebsiteService, 
@@ -27,9 +28,9 @@ export class WebsiteEditComponent implements OnInit {
    });
   }
 update() {
-  const newWeb = {
+  const newWeb: Website = {
     name: this.website.name,
-    decription: this.website.decription,
+    description: this.website.description,
     _id: this.wid,
     developerId: this.uid
 

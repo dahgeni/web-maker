@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
             lastName: "",
             email: ""
           };
-         const currentUser = this.userService.createUser(newUser);
+         const currentUser: User = this.userService.createUser(newUser);
          this.router.navigate(["user", currentUser._id]);
 
         }

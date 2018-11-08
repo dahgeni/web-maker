@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./website-list.component.css']
 })
 export class WebsiteListComponent implements OnInit {
-  websites: any[];
+  websites: [];
   uid: string;
   constructor(
     private websiteService: WebsiteService, 
