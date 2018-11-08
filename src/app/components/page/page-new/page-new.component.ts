@@ -19,25 +19,23 @@ export class PageNewComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private pageService: PageService,
     private router: Router
-
     ) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(
-      (params) => {
+    this.activatedRoute.params.subscribe(params => {
         this.wid = params["wid"];
-        this.wid = params["uid"];
-      }
-    )
-    
+        this.uid = params["uid"];
+      }) 
   }
+
 createPage(){
-const page: Page = {
-  name: this.name,
-  title: this.title,
-  websiteId: this.wid
+  const page: Page = {
+    name: this.name,
+    title: this.title,
+    websiteId: this.wid
 };
-this.pageService.createPage(page);
-this.router.navigate(["user", this.uid, "website", this.wid, "page"])
+
+  this.pageService.createPage(page);
+  this.router.navigate(["user", this.uid, "website", this.wid, "page"])
 }
 }

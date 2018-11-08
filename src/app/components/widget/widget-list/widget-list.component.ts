@@ -36,10 +36,10 @@ export class WidgetListComponent implements OnInit {
   }
 parseYoutubeSrc(src) {
   //transfer video url into embeded wideo url
-  let embedUrl: string ="http://www.youtube.com/embed/";
+  let embedUrl: string = "http://www.youtube.com/embed/";
   const splitUrl: string[] = src.split('/');
-  embedUrl += splitUrl[splitUrl.length -1];
+  embedUrl += splitUrl[splitUrl.length - 1];
   //telling the browser this src is safe
-  return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl)
+  return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
 }
 }

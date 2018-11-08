@@ -21,15 +21,15 @@ export class PageEditComponent implements OnInit {
     
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params =>{
+    this.activatedRoute.params.subscribe(params => {
       this.uid = params["uid"];
       this.wid = params["wid"];
-      this.pid = params["pic"];
+      this.pid = params["pid"];
       this.page = this.pageService.findPagebyId(this.pid);
-
     });
   }
-update(){
+
+update() {
   this.pageService.updatePage(this.page);
   this.router.navigate(["user", this.uid, "website", this.wid, "page"]);
 }  
@@ -38,6 +38,5 @@ delete() {
   this.pageService.deletePage(this.pid);
   this.router.navigate(["user", this.uid, "website", this.wid, "page"]);
 }
-
 
 }

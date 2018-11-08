@@ -14,52 +14,44 @@
             <div class="absolute right">
                 <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{widget._id}}"><i class="fas fa-cog "></i></a>
                 <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-bars"></i></a>
-                <div [ngSwithc="widget.size"]>
-
-                </div>
                        <!--Content-->
-            <div [ngSwitch]="widget.widgetType">
-                <div *ngSwitchCase="'HEADING'">
-                    <div [ngSwitch]="widget.size">
-                        <div *ngSwitchCase="1">
-                           <h1>{{widget.text}}</h1>
-                        </div>
-                        <div *ngSwitchCase="2">
-                           <h2>{{widget.text}}</h2>
-                        </div>
-                          <div *ngSwitchCase="2">
-                             <h2>{{widget.text}}</h2>
-                         </div>
-                             <div *ngSwitchCase="3">
-                              <h3>{{widget.text}}</h3>
-                         </div>   
+                <div [ngSwitch]="widget.widgetType">
+                    <div *ngSwitchCase="'HEADING'">
+                        <div [ngSwitch]="widget.size">
+                            <div *ngSwitchCase="1">
+                                <h1>{{widget.text}}</h1>
+                            </div>
+                            <div *ngSwitchCase="2">
+                                <h2>{{widget.text}}</h2>
+                            </div>
+                            <div *ngSwitchCase="2">
+                                <h2>{{widget.text}}</h2>
+                            </div>
+                            <div *ngSwitchCase="3">
+                                <h3>{{widget.text}}</h3>
+                            </div>   
                             <div *ngSwitchCase="4">
-                             <h4>{{widget.text}}</h4>
-                         </div>    
-                              <div *ngSwitchCase="5">
-                               <h5>{{widget.text}}</h5>
-                          </div> 
-                             <div 
-                              ngSwitchCase="6">
-                               <h6>{{widget.text}}</h6>
-                          </div>              
+                                <h4>{{widget.text}}</h4>
+                            </div>    
+                            <div *ngSwitchCase="5">
+                                <h5>{{widget.text}}</h5>
+                            </div> 
+                            <div *ngSwitchCase="6">
+                                <h6>{{widget.text}}</h6>
+                            </div>              
+                        </div>
                     </div>
-                </div>
-                <div *ngSwitchCase="'IMAGE'">
-                    <img [src]="widget.url" [style.width]="widget.width" />
-                   </div> 
-                   <div *ngSwitchCase="'YOUTUBE'">
-                       <div class="embed-responsive embed-responsive-16By9"></div>
-                       <iframe [src]="parseYoutubeSrc(widget.url)" [style.width]= "widget.width" allowfullscreen></iframe>
-
-                   </div>
-                 </div>          
-                </div>
-              </div> 
-                
-              
- 
-              
+                    <div *ngSwitchCase="'IMAGE'">
+                        <img [src]="widget.url" [style.width]="widget.width" />
+                    </div> 
+                    <div *ngSwitchCase="'YOUTUBE'">
+                        <div class="embed-responsive embed-responsive-16by9"></div>
+                        <iframe [src]="parseYoutubeSrc(widget.url)" [style.width]="widget.width" allowfullscreen></iframe>
+                    </div>
+                </div>          
+            </div>
+        </div> 
+    </div>
     <!--footer-->
     
 

@@ -38,7 +38,8 @@ export class WidgetService {
         { _id: "678",
          widgetType: "YOUTUBE",
          pageId: "321",
-         width: "100%", url: "https://youtu.be/AM2Ivdi9c4E" 
+         width: "100%", 
+         url: "https://youtu.be/AM2Ivdi9c4E" 
         },
     
       ];
