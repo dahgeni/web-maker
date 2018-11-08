@@ -1,13 +1,11 @@
 import { Injectable } from "@angular/core";
+import { Page } from "../models/page.model.client";
 
 @Injectable()
 export class PageService {
-  findPagesbyWebsiteId(wid: string): any[] {
-    throw new Error("Method not implemented.");
-  }
-
- 
-pages = [
+  
+  
+pages: Page[] = [
 
    { _id: "321",
      name: "Post 1", 
@@ -27,13 +25,13 @@ pages = [
   
   ]
 
-  createPage(page) {
+  createPage(page: Page) {
       page._id = Math.random().toString();
       this.pages.push(page);
       return page;
   }
 
-  findpagesbywebsiteId(websiteId) {
+  findpagesbywebsiteId(websiteId: string) {
       let result = [];
       for(let i = 0; i < this.pages.length; i ++) {
          if(this.pages[i].websiteId) {
@@ -42,7 +40,7 @@ pages = [
       }
         return result;
    }
-        findPagebyId(pageId) {
+        findPagebyId(pageId: string) {
             for(let i =0; i < this.pages.length; i ++) {
               if (pageId === this.pages[i]._id) {
                     return this.pages[i];
@@ -50,14 +48,14 @@ pages = [
         }      
             
     }
-    updatePage(page) {
+    updatePage(page: Page) {
         const oldPage = this.findPagebyId(page._id);
         const index = this.pages.indexOf(oldPage);
         this.pages[index] = page;
     }
 
 
-    deletePage(pageId) {
+    deletePage(pageId: string) {
         const oldPage = this.findPagebyId(pageId); {
         const index = this.pages.indexOf(oldPage);
         this.pages.splice(index, 1);

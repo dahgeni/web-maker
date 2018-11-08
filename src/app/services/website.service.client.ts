@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Website } from '../models/website.model.client';
 
 // injecting service into module
 
 @Injectable()
 export class WebsiteService {
-  findWebsitesByUser(uid: any): any {
-    throw new Error("Method not implemented.");
-  }
-    constructor() {}
+
+        constructor() {}
  
-   websites = [
+   websites: Website[] = [
 
         { _id: "123",
          name: "Facebook",
@@ -50,7 +49,7 @@ export class WebsiteService {
      }
       
       ];   
-      createwebsite(website)  {
+      createwebsite(website: Website)  {
           website._id= Math.random().toString();
           this.websites.push(website);
           return website;
@@ -64,15 +63,15 @@ export class WebsiteService {
             }
             return result;
          }
-  findwebsiteById(websiteId) {
+  findwebsiteById(websiteId: String) {
       for (let i = 0; i < this.websites.length; i++) {
-            if(this.websites[i]._id = websiteId) {
+            if(this.websites[i]._id === websiteId) {
                 return this.websites[i];
             }
       }
   
     }
-     updateWebsite(website) {
+     updateWebsite(website: Website) {
          const oldWeb = this.findwebsiteById(website._id);
          const index = this.websites.indexOf(oldWeb);
          this.websites[index] = website;
