@@ -10,11 +10,11 @@
     <form id="myForm" #myForm= "ngForm" (ngSubmit)="update()">
         <div class="form-group">
             <label for="name"><b>Name</b></label>
-            <input name="name"placeholder="Image Name" [(ngModel)]="widget.name" type="text" id="name" class="form-control">
+            <input placeholder="Image Name" [(ngModel)]="widget.name" name="name" type="text" id="name" class="form-control">
         </div>
         <!--url-->
         <div class="form-group">
-            <label for="url">Url<b>Url</b></label>
+            <label for="url"><b>Url</b></label>
             <input placeholder="Image Url" [(ngModel)]="widget.url" type="text" id="url" class="form-control">
         </div>           
         <!--width-->

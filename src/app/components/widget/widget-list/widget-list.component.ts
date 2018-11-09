@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WidgetService } from 'src/app/services/widget.service.client';
 import { Widget } from 'src/app/models/widget.model.client';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-widget-list',
@@ -13,16 +14,13 @@ export class WidgetListComponent implements OnInit {
   wid: string;
   pid: string;
   widgets: Widget[];
-  sanitizer: any;
-
+  
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private widgetService: WidgetService,
-    private router: Router
-   
-    
-
+    private router: Router,
+    private sanitizer: DomSanitizer      
   ) { }
 
   ngOnInit() {

@@ -24,8 +24,8 @@ export class WidgetService {
         { _id: "345",
          widgetType: "IMAGE",
           pageId: "321", 
-          width: "100%",
-          url: "http://lorempixel.com/400/200/"
+          width: "50%",
+          url: "https://bit.ly/2z16yXp"
         },
       
          { _id: "567", 
