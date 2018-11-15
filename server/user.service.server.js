@@ -12,7 +12,7 @@ module.exports = function(app) {
     //get user
     app.get("/api/user", findUser);
     //update User
-    app.put("/api/user/:uid", updateUser);
+    app.put("/api/user", updateUser);
 
 
     users = [
@@ -57,15 +57,10 @@ module.exports = function(app) {
    }
   function findUserById(req, res){
      const userId = req.params["uid"];
-     let user;
-   for (let x = 0; x < this.users.length; x++) {
-   if (this.users[x]._id === userId) { 
-         user = users[x]; 
-       }
-    }  
+     let user = selectUserById(userId);
      res.json(user);
    }
-   function findUser(rq, res) {
+   function findUser(req, res) {
        const username = req.query['username'];
        const password = req.query ["password"];
 
@@ -96,13 +91,16 @@ module.exports = function(app) {
             return;
        
     }
-    function selectUser(uid) {
-        const oldUser = this.finduserById(user._id);
-        const index = this.users.indexof(oldUser);
+    function selectUserById(uid) {
+        for(let x = 0; x < user.lenght; x++)
+        if(user[x]._id === uid) {
+            return user[x];
+        }
+      
     }
     function updateUser(req, res) {
        const user = req.body;
-       const oldUser = findUserbyId(user._id);
+       const oldUser = selectUserById(user._id);
        const index = users.indexOf(oldUser);
        this.users[index] = users;
        res.json(user);
