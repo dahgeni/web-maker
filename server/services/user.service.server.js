@@ -60,41 +60,35 @@ module.exports = function(app) {
      let user = selectUserById(userId);
      res.json(user);
    }
-   function findUser(req, res) {
+    function findUser(req, res) {
        const username = req.query['username'];
        const password = req.query ["password"];
 
        if(username && password) {
-           let user; 
-           for(let i=0; i<users.length; i++)
-            if(
-           users[i].username === username && users[i].password === password
-            ) {
-              user = users[i];            
-             }
-      
-   
-       res.json(user);
-       return;
-   }
+            let user; 
+            for(let i=0; i<users.length; i++) {
+                if(users[i].username === username && users[i].password === password) {
+                    user = users[i];            
+                }
+            }
+            res.json(user);
+            return;
+        }
         if (username){
             let user;
-         for(let i =0; i<users.length; i++) 
-
-        
-           if(users[i].username === username) {
-                 user =users[i];
-
+            for(let i =0; i<users.length; i++) { 
+                if(users[i].username === username) {
+                    user =users[i];
                 }
             }
             res.json(user)
             return;
-       
+        }
     }
     function selectUserById(uid) {
-        for(let x = 0; x < user.lenght; x++)
-        if(user[x]._id === uid) {
-            return user[x];
+        for(let x = 0; x < users.length; x++)
+        if(users[x]._id === uid) {
+            return users[x];
         }
       
     }

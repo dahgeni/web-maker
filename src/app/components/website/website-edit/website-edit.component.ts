@@ -22,10 +22,17 @@ export class WebsiteEditComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.uid = params["uid"];
       this.wid = params["wid"];
-      this.websites =this.websiteService.findWebsitesByUser(this.uid);
-      this.website = this.websiteService.findWebsiteById(this.wid);
-   });
-  }
+        this.websiteService.findWebsitesByUser(this.uid).subscribe(
+        (websites: Website[]) => {
+         this.websites = websites;
+        });
+        this.websiteService.findWebsiteById(this.wid).subscribe(
+          (website: Website) => {
+            this.website = website;
+          });
+       });
+      }
+
 update() {
   const newWeb: Website = {
     name: this.website.name,
@@ -37,11 +44,16 @@ update() {
   
   this.websiteService.updateWebsite(newWeb);
   this.router.navigate(["user", this.uid, "website"]);
-}
+
+    };
+    
+     
+   }
+
 delete() {
   this.websiteService.deleteWebsite(this.wid);
   this.router.navigate(["user", this.uid, "website"]);
 }
-}
+
 
 
