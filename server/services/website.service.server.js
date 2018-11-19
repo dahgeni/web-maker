@@ -1,14 +1,13 @@
 module.exports = function(app) {
     // create website
-    app.post("/api/website/:uid/website", createWebsite);
+    app.post("/api/website", createWebsite);
     //Find Websites For User
-    function createWebsite(req, res)
     app.get("/api/user/:uid/website", findAllWebsitesForUser);
     //find websitre By Id
     app.get("/api/website/:wid", findWebsiteById);
     //update website
     app.put("/api/website", updateWebsite);
-    app.delet("/api/website/:wid", deleteWebsite);
+    app.delete("/api/website/:wid", deleteWebsite);
 
     websites =  [
 
@@ -54,22 +53,22 @@ module.exports = function(app) {
 
     function createWebsite(req, res) {
         let website = req.body; 
-        website._id =math.random().toString();
-        website.push(website);
+        website._id = Math.random().toString();
+        websites.push(website);
         res.json(website);
     }
     function findAllWebsitesForUser(req, res) {
         let result = []; 
         const userId = req.params["uid"];
-        for (let i = 0; i < website.lennght; i++) {
-            if(this.websites[i].developerId === userId) {
-                result.push(this.website[i]);
+        for (let i = 0; i < websites.length; i++) {
+            if(websites[i].developerId === userId) {
+                result.push(websites[i]);
             }
         }
-      re.jason(result);
+      res.json(result);
     }
       function selectWebsiteById(wid) {
-        for(let i = 0; i < website.length; i++) {
+        for(let i = 0; i < websites.length; i++) {
             if (websites[i]._id === wid)  {
                 return websites[i];
             }
@@ -85,11 +84,12 @@ module.exports = function(app) {
 
     function updateWebsite(req, res) {
         const website = req.body;
-      const oldWeb = findWebsitebyId(website._id);
-      const index = this.websites.indexOf(oldWeb);
-      this.websites[index] = website;
-      re.json(website);
+      const oldWeb = selectWebsitebyId(website._id);
+      const index = websites.indexOf(oldWeb);
+      websites[index] = website;
+      res.json(website);
     }
+
     function deleteWebsite(req, res) {
         const websiteId = req.params["wid"];
         const website = selectWebsiteById(websiteId);

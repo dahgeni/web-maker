@@ -11,12 +11,17 @@ export class WebsiteEditComponent implements OnInit {
   websites: Website[];
   uid: string;
   wid: string;
-  website: Website;
+  website: Website = {
+    name: "",
+    description: "",
+    developerId: ""
+  };
 
   constructor( 
     private websiteService: WebsiteService, 
     private activatedRoute: ActivatedRoute, 
-    private router: Router) { }
+    private router: Router) {}
+    
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -42,18 +47,19 @@ update() {
 
   };
   
-  this.websiteService.updateWebsite(newWeb);
+  this.websiteService.updateWebsite(newWeb).subscribe(
+  (website: Website) => {
   this.router.navigate(["user", this.uid, "website"]);
 
-    };
-    
-     
-   }
-
+    });
+  }
+         
 delete() {
-  this.websiteService.deleteWebsite(this.wid);
-  this.router.navigate(["user", this.uid, "website"]);
-}
+  this.websiteService.deleteWebsite(this.wid).subscribe(
+    (websites: Website[]) => {
+      this.router.navigate(["user", this.uid, "website"]);
 
-
-
+    });
+  }
+  
+ }

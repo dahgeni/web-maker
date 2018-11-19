@@ -15,8 +15,8 @@ export class WebsiteService {
         baseUrl = environment.baseUrl;
  
   
-      createwebsite(website: Website) {
-        const url = this.baseUrl + "/api/user/:uid/website";
+      createWebsite(website: Website) {
+        const url = this.baseUrl + "/api/website";
         return this.http. post(url, website).pipe(map((res: Response) => {
           return res.json();
           })
@@ -47,18 +47,19 @@ export class WebsiteService {
 
          
          updateWebsite(website: Website) {
-         const url = "/api/website/";  
+         const url = this.baseUrl +"/api/website/";  
          return this.http.put(url, website).pipe(
              map((res: Response) => {
-                 return res.json
+                 return res.json();
              })         
            );              
          
      }  
      deleteWebsite(websiteId) {
-         const url = "/api/website/" + websiteId;
+         const url = this.baseUrl + "/api/website/" + websiteId;
          return this.http.delete(url).pipe(
             map((res: Response) => {
+              return res.json();
 
             })
 
