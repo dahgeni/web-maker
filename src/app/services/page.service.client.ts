@@ -1,65 +1,61 @@
 import { Injectable } from "@angular/core";
 import { Page } from "../models/page.model.client";
+import {Http, Response} from "@angular/http";
+import {map} from "rxjs/operators";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class PageService {
-  
-  
-pages: Page[] = [
+    constructor(private http: Http) {}
 
-   { _id: "321",
-     name: "Post 1", 
-     websiteId: "456",
-     title: "Lorem"
-   },
+    baseUrl = environment.baseUrl;
   
-   { _id: "432", name: "Post 2",
-    websiteId: "456",  
-    title: "Lorem" },
-  
-   { _id: "543",
-    name: "Post 3",
-    websiteId: "456",
-    title: "Lorem" 
-}
-  
-  ]
-
-  createPage(page: Page) {
-      page._id = Math.random().toString();
-      this.pages.push(page);
-      return page;
+    createPage(page: Page) {
+        const url =this.baseUrl + "/api/page";
+        return this.http.post(url, page).pipe(map((res: Response) => {
+          return res.json();
+          })
+        );
+        
   }
 
-  findPagesByWebsiteId(websiteId: string) {
-      let result = [];
-      for(let i = 0; i < this.pages.length; i ++) {
-         if(this.pages[i].websiteId) {
-          result.push(this.pages[i]);   
-         }
-      }
-        return result;
+  findAllPagesForWebsite(websiteId: string) {
+    const url =this.baseUrl + `/api/website/${websiteId}/page`;
+    return this.http.get(url,).pipe(map((res: Response) => {
+      return res.json();
+      })
+    );
+           
    }
-        findPagebyId(pageId: string) {
-            for(let i =0; i < this.pages.length; i ++) {
-              if (pageId === this.pages[i]._id) {
-                    return this.pages[i];
-            } 
-        }      
-            
+       
+        findPageById(pageId: string) {
+         const url =this.baseUrl + "/api/page/" + pageId;
+         return this.http. get(url).pipe(map((res: Response) => {
+         return res.json();
+         })
+       );
+      
+    
     }
     updatePage(page: Page) {
-        const oldPage = this.findPagebyId(page._id);
-        const index = this.pages.indexOf(oldPage);
-        this.pages[index] = page;
+        const url =this.baseUrl + "/api/page/"; 
+        return this.http. get(url).pipe(map((res: Response) => {
+        return res.json();
+        })
+      );
+     
+      
     }
 
 
-    deletePage(pageId: string) {
-        const oldPage = this.findPagebyId(pageId); {
-        const index = this.pages.indexOf(oldPage);
-        this.pages.splice(index, 1);
-    }
+  
+deletePage(pageId: string) {
+    const url =this.baseUrl + "/api/page/" + pageId; 
+       return this.http.delete(url).pipe(map((res: Response) => {
+       return res.json();
+        })
+      );
+        
   }
 
 }

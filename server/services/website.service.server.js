@@ -7,6 +7,7 @@ module.exports = function(app) {
     app.get("/api/website/:wid", findWebsiteById);
     //update website
     app.put("/api/website", updateWebsite);
+    
     app.delete("/api/website/:wid", deleteWebsite);
 
     websites =  [

@@ -25,7 +25,7 @@ export class PageEditComponent implements OnInit {
       this.uid = params["uid"];
       this.wid = params["wid"];
       this.pid = params["pid"];
-      this.page = this.pageService.findPagebyId(this.pid);
+      this.page = this.pageService.findPageById(this.pid);
     });
   }
 

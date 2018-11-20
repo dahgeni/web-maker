@@ -40,7 +40,7 @@ export class WebsiteNewComponent implements OnInit {
        developerId: this.uid
 
      };
-     this.websiteService.createwebsite(website).subscribe(
+     this.websiteService.createWebsite(website).subscribe(
        (website: Website) => {
        this.router.navigate(["user",this.uid, "website"]);
       });
