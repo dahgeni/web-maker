@@ -50,7 +50,6 @@ module.export = function(app) {
     
       ];
 
-
      function createWidget(req, res) {
        widget._id = Math.random().toString();
         this. widgets.push(widget);
@@ -64,12 +63,44 @@ module.export = function(app) {
           result.push(this.widgets[i]);
          }  
      }
-     function findWidgetById(req, res) {}
-     function updateWidget(req, res) {}
-     function deleteWidget(req, res) {}
+
+    }
+
+     function selectWidgetById(wid) {
+     for (let i =0; i< widgets.length; i ++)
+      if (widgetId [i]=== wid) {
+        return widgets[i];
+        }
+     }
+    function findWidgetById(req, res) {
+     const wid = req.params["wid"];
+     const website = selectWidgetById(wid);
+     res,json(website);
+    }
+  }
+      
+     function updateWidget(req, res) {
+       const widget = res.body;
+      const oldWidget = selectWidgetById(widget._id);
+      const index = widgets.indexOf(oldWidget);
+      this.widgets[index] = widget;
+      res.json(website);
+      }
+     function deleteWidget(req, res) {
+      const widgetId = req.params["wid"];
+      const oldWidget = selectWidgetById(widgetId);
+      const index = widgets.indexOf(oldWidget)
+      this.widgets.splice(index, 1);
+      
+    };
+  
+
+ 
        
      
-}
+
+
+
 
 
 
