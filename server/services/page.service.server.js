@@ -2,7 +2,7 @@ module.export = function(app) {
 
     app.post("/api/page/", createPage);
     //Find page For User
-    app.get("/api/website/:wid/page", findAllPagesForUser);
+    app.get("/api/website/:wid/page", findAllPagesWebsite);
     //find page By Id
     app.get("/api/page/:pid", findPageById);
     //update page
@@ -36,11 +36,11 @@ module.export = function(app) {
       this.pages.push(page);
       res.json(page);
     }
-      function findAllPagesForUser(req, res) {
+      function findAllPagesWebsite(req, res) {
         let result = [];
-        const userId = req.params["uid"];
+        const wid = req.params["wid"];
       for(let i = 0; i < this.pages.length; i ++) {
-         if(pages[i].websiteId) {
+         if(pages[i].pageId) {
           result.push(pages[i]);   
          }
       }
@@ -55,9 +55,9 @@ module.export = function(app) {
 } 
 
      function findPageById(res, res) {
-         const wid = req.params ["wid"];
-         const website = selectWebsiteById(wid);
-         res.json(website)
+         const wid = req.params ["pid"];
+         const page = selectpageById(wid);
+         res.json(page);
 
      }
 

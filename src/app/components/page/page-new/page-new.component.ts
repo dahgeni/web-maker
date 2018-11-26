@@ -35,7 +35,10 @@ createPage(){
     websiteId: this.wid
 };
 
-  this.pageService.createPage(page);
+  this.pageService.createPage(page).subscribe((page: Page) => {
+    this.router.navigate(["user", this.uid, "website", this.wid, "page"]);
+
+  });
   this.router.navigate(["user", this.uid, "website", this.wid, "page"])
 }
 }

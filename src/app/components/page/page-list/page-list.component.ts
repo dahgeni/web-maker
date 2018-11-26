@@ -18,9 +18,12 @@ export class PageListComponent implements OnInit {
   
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      this.uid = params["uid"];
-      this.wid = params["wid"];
-      this.pages = this.pageService.findPagesByWebsiteId(this.wid);
+     this.uid = params["uid"];
+     this.wid = params["wid"];
+     this.pageService.findPagesByWebsiteId(this.wid).subscribe((pages: Page []) => {
+       this.pages = pages;
+     });
+     
     });
 
   }

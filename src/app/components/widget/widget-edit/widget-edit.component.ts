@@ -23,7 +23,7 @@ export class WidgetEditComponent implements OnInit {
       (params)=>{
        this.wgid = params["wgid"]  
        //click on item then hit f12 to find where to define it
-       this.widget = this.widgetService.findWidgetById(this.wgid);
+       this.widget = (this.widget),this.widgetService.findWidgetById(this.wgid);
        }
     );
 

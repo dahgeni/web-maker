@@ -16,40 +16,32 @@ export class PageService {
           return res.json();
           })
         );
-        
-  }
+     }
 
-  findAllPagesForWebsite(websiteId: string) {
+  findPagesByWebsiteId(websiteId: string) {
     const url =this.baseUrl + `/api/website/${websiteId}/page`;
-    return this.http.get(url,).pipe(map((res: Response) => {
+    return this.http.get(url).pipe(map((res: Response) => {
       return res.json();
       })
     );
            
-   }
-       
-        findPageById(pageId: string) {
-         const url =this.baseUrl + "/api/page/" + pageId;
-         return this.http. get(url).pipe(map((res: Response) => {
+   }       
+    findPageById(pageId: string) {
+       const url =this.baseUrl + "/api/page/" + pageId;
+       return this.http. get(url).pipe(map((res: Response) => {
          return res.json();
          })
        );
-      
-    
+          
     }
     updatePage(page: Page) {
-        const url =this.baseUrl + "/api/page/"; 
-        return this.http. get(url).pipe(map((res: Response) => {
+        const url = this.baseUrl + "/api/page/"; return this.http. put(url, page).pipe(map((res: Response) => {
         return res.json();
         })
       );
-     
-      
     }
-
-
   
-deletePage(pageId: string) {
+    deletePage(pageId: string) {
     const url =this.baseUrl + "/api/page/" + pageId; 
        return this.http.delete(url).pipe(map((res: Response) => {
        return res.json();

@@ -40,7 +40,8 @@ create(type: string) {
 
   const wgid: string = this.widgetService.widgets[this.widgetService.widgets.length - 1]._id;
 this.router.navigate
-(["usr",
+
+(["user",
 this.uid,
 "website",
 this.wid,
@@ -52,4 +53,3 @@ wgid
 
   }
 }
- 
