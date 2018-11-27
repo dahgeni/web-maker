@@ -1,13 +1,13 @@
 module.export = function(app) {
 
     //create widget
-    app.post("/api/widget/", createWidget);
+   app.post("/api/widget/", createWidget);
     //Find page For widget
-    app.get("/api/page/:pid/widget", findAllWidgetsForPage);
+   app.get("/api/page/:pid/widget", findAllWidgetsForPage);
     //find widget By Id
-    app.get("/api/widget/:wgid", findWidgetById);
+   app.get("/api/widget/:wgid", findWidgetById);
     //update page
-    app.put("/api/widget/", updateWidget);
+   app.put("/api/widget/", updateWidget);
     //delete page
     app.delete("/api/widget/:wgid", deleteWidget);
 
@@ -57,25 +57,24 @@ module.export = function(app) {
      }
      function findAllWidgetsForPage(req, res) {
        let result = [];
-       const userId = req.params["uid"]
+       const pid = req.params["pid"]
        for(let i= 0;i<widgets.length; i ++){
-       if(pageId === widgets[i].pageId) {
+       if(widget[i].pageId === pid) {
           result.push(this.widgets[i]);
          }  
      }
 
     }
-
-     function selectWidgetById(wid) {
+     function selectWidgetById(wgid) {
      for (let i =0; i< widgets.length; i ++)
-      if (widgetId [i]=== wid) {
-        return widgets[i];
+      if (widgetId [i]=== wgid) {
+        return pages[i];
         }
      }
     function findWidgetById(req, res) {
-     const wid = req.params["wid"];
-     const website = selectWidgetById(wid);
-     res,json(website);
+     const wgid = req.params["wgid"];
+     const widget = selectWidgetById(pid);
+     res,json(widget);
     }
   }
       
@@ -84,14 +83,16 @@ module.export = function(app) {
       const oldWidget = selectWidgetById(widget._id);
       const index = widgets.indexOf(oldWidget);
       this.widgets[index] = widget;
-      res.json(website);
+      res.json(widget);
       }
+
      function deleteWidget(req, res) {
-      const widgetId = req.params["wid"];
-      const oldWidget = selectWidgetById(widgetId);
+      const wgid = req.params["wgid"];
+      const widget = selectWidgetById(wgid);
       const index = widgets.indexOf(oldWidget)
       this.widgets.splice(index, 1);
-      
+      res.json(widgets);
+  
     };
   
 

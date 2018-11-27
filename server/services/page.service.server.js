@@ -64,15 +64,15 @@ module.export = function(app) {
       
 
     function updatePage(req, res) {
-        const page = req.body;
-        const oldPage = selectPagebyId(page._id);
-        const index = pages.indexOf(oldPage);
+       const page = req.body;
+       const oldPage = selectPagebyId(page._id);
+       const index = pages.indexOf(oldPage);
         this.pages[index] = page;
         res.json(pages);
     }
 
     function deletePage(req, res) {
-        const pageId = req.params["wid"];
+        const pageId = req.params["pid"];
         const page = selectPageById(pageId);
         const index = pages.indexOf(page);
         websites.splice(index, 1);

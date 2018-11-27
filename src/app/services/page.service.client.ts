@@ -39,11 +39,13 @@ export class PageService {
         return res.json();
         })
       );
+
     }
-  
+
     deletePage(pageId: string) {
     const url =this.baseUrl + "/api/page/" + pageId; 
-       return this.http.delete(url).pipe(map((res: Response) => {
+    
+    return this.http.delete(url).pipe(map((res: Response) => {
        return res.json();
         })
       );
