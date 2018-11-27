@@ -1,4 +1,4 @@
-module.export = function(app) {
+module.exports = function(app) {
 
     app.post("/api/page/", createPage);
     //Find page For User

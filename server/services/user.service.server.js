@@ -52,7 +52,7 @@ module.exports = function(app) {
    function createUser(req, res){
        var user = req.body;
        user._id = Math.random().toString();
-      user.push();
+      users.push(user);
       res.json(user);
    }
   function findUserById(req, res){

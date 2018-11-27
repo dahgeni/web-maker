@@ -16,7 +16,7 @@ export class UserService {
 
   createUser(user: User) {
     const url = this.baseUrl + "/api/user";
-    return this.http. post(url, user).pipe(map((res: Response) => {
+    return this.http.post(url, user).pipe(map((res: Response) => {
       return res.json();
       })
     );
@@ -46,7 +46,7 @@ export class UserService {
        
  
   findUserByCredentials(username: string, password: string) {
-    const url = this.baseUrl + "/api/user?username=" + username + "&password" + password;
+    const url = this.baseUrl + "/api/user?username=" + username + "&password=" + password;
     return this.http.get(url).pipe(map((res: Response) => {
       return res.json();
       })

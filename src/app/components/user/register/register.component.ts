@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service.client';
 import { Router } from "@angular/router";
-import { User } from 'src/app/models/user.model.client';
-import { stringify } from 'querystring';
+import { User } from 'src/app/models/user.model.client'
 
 @Component({
   selector: 'app-register',
@@ -34,7 +33,7 @@ export class RegisterComponent implements OnInit {
         this.userError = true;
         },
         (error: any) => {
-          const newUser: User ={
+          const newUser: User = {
               username: this.username,
               password:this.password,
               firstName: "",

@@ -1,4 +1,4 @@
-module.export = function(app) {
+module.exports = function(app) {
 
     //create widget
    app.post("/api/widget/", createWidget);
