@@ -29,10 +29,9 @@ export class RegisterComponent implements OnInit {
       this.userError = false;
     } else {
       this.passwordError = false;
-      this.userService.findUserByUsername(this.username).subscribe((user: User)=> {
-        this.userError = true;
-        },
-        (error: any) => {
+      this.userService.findUserByUsername(this.username).subscribe(
+         (data: any) => {
+           if(!data)  {
           const newUser: User = {
               username: this.username,
               password:this.password,
@@ -43,11 +42,14 @@ export class RegisterComponent implements OnInit {
           this.userService.createUser(newUser).subscribe(
             (user: User) => {
               this.router.navigate(["user", user._id]);
-            });
-
+             });
+           } else {
+                 this.userError = true;
+                }
+                });
+              }
             }
-          )
-        }  
-       
-      }
-    }
+          }  
+      
+        
+    
