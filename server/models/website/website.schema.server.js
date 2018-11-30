@@ -1,6 +1,6 @@
-const mongoose = rquuire("mongoose");
+const mongoose = require("mongoose");
 
-const websiteSchema = mongoose.Schema(
+const WebsiteSchema = mongoose.Schema(
 
 {
     name: String,

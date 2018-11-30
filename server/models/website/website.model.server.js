@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const WebsiteSchema = require ("website.schema.server")
+const WebsiteSchema = require ("./website.schema.server")
 const WebsiteModel = mongoose.model("websiteModel", WebsiteSchema);
 
 WebsiteModel.
@@ -33,4 +33,4 @@ function deleteWebsite(wid) {
     return WebsiteModel.remove({ _id: wid});
 
 }
-module.exports = Websitemodel;
+module.exports = WebsiteModel;

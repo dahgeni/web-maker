@@ -1,5 +1,5 @@
 module.exports = function(app) {
-    var websiteModel = require ("../model/website/website.model.server")
+    var websiteModel = require ("../models/website/website.model.server");
     // create website
     app.post("/api/website", createWebsite);
     //Find Websites For User
@@ -10,8 +10,7 @@ module.exports = function(app) {
     app.put("/api/website", updateWebsite);
     
     app.delete("/api/website/:wid", deleteWebsite);
-
-   
+    
 
    async function createWebsite(req, res) {
         let website = req.body; 
@@ -20,10 +19,10 @@ module.exports = function(app) {
         res.json(data);
         
     }
-    function findAllWebsitesForUser(req, res) {
-        var uid = req.paramas["uid"];
+    async function findAllWebsitesForUser(req, res) {
+        var uid = req.params["uid"];
         const data = await 
-        websiteModel.findAllwebsitesForUser(uid);
+        websiteModel.findAllWebsitesForUser(uid);
         res.json(data);
         }
       
@@ -44,13 +43,13 @@ module.exports = function(app) {
 
     async function deleteWebsite(req, res) {
         const websiteId = req.params["wid"];
-        const data = websiteModel.deleteWebsite(websiteId);
+        const data = await
+        websiteModel.deleteWebsite(websiteId);
         res.json(data);
     
+  }
 
-
-}
-
+};
   
 
 

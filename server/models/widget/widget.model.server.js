@@ -13,7 +13,7 @@ WidgetModel.deletewidget =
 deleteWidget;
 
 function createWidget(widget) {
-    return WidgetModel.create(website);
+    return WidgetModel.create(widget);
  }
 function findAllWidgetsForPage(pid) {
     return widgetModel.create({ developerId: pid });
@@ -27,8 +27,8 @@ function updateWidget(wgid, widget) {
         widget);  
 }
 
-function deleteWidget(wid) {
-    return widgetModel.remove({ _id: wid});
+function deleteWidget(wgid) {
+    return widgetModel.remove({ _id: wgid});
 
 }
 module.exports = Widgetmodel;

@@ -21,7 +21,7 @@ const userModel = require("../models/user/user.model.server");
        const data = await userModel.createUser(user);
          res.json(data);
          }
-      }
+      
       
      async function findUserById(req, res){
      const userId = req.params["uid"];
@@ -29,31 +29,30 @@ const userModel = require("../models/user/user.model.server");
          }
      
      async function findUser(req, res) {
-       const username = req.query['username'];
+       const username = req.query["username"];
        const password = req.query ["password"];
        if(username && password) {
            const data = await
-       userModel.findUserBycredentials(username, password); 
+       userModel.findUserByCredentials(username, password); 
            res.json(data);
-          return;
-       }
-                   
+        return;      
                 
-        }
-        if (username){
-            userModel.findUserByUsername(username).then((data) => {res.jason(data)
-            return; 
-        });
-    }  
-        
-    
+     }
+        if (username) {
+           const data = await userModel.findUserByUsername(username); 
+            res.json(data);
+       return
+    }    
+}   
+            
    async function updateUser(req, res) {
        const user = req.body;
      const uid = user._id;
      const date = await
-     userModel.updateUser(uid, user);
+     userModel. UserModel.updateUser(uid, user);
         res.json(data);
         return;
     }
+};
            
       
