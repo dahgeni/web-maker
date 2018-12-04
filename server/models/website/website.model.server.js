@@ -18,7 +18,7 @@ createWebsiteForUser =
     return WebsiteModel.create(website);
  }
 function findAllWebsitesForUser(uid) {
-    return WebsiteModel.create({ developerId: uid });
+    return WebsiteModel.find({ developerId: uid });
 }
 function findWebsiteById(wid) {
     return WebsiteModel.findById(wid);

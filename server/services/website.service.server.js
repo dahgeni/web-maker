@@ -15,7 +15,7 @@ module.exports = function(app) {
    async function createWebsite(req, res) {
         let website = req.body; 
         const data = await
-        websiteModel.CreateWebsiteForUser(website)
+        websiteModel.createWebsiteForUser(website)
         res.json(data);
         
     }
