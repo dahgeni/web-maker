@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const PageSchema = require ("../user/user.schema.server");
-const userModel = mongoose.model("userModel", PageSchema);
+const PageModel = mongoose.model("userModel", PageSchema);
 
-pageModel.createpage = createPage;
-pageModel.findAllPagesForWebsite = findAllPagesForWebsite;
-pageModel.findPageById =
+PageModel.createpage = createPage;
+PageModel.findAllPagesForWebsite = findAllPagesForWebsite;
+PageModel.findPageById =
  findPageById;
-pagerModel.updatePage =
+PagerModel.updatePage =
 updatePage;
-pageModel.deletePage = 
+PageModel.deletePage = 
 deletePage;
 
 
@@ -26,4 +26,4 @@ function updatePage(pid, page){
     return PageModel.update({_id: pid}, page);
 }
 
-module.exports = UserModel;
+module.exports = PageModel;

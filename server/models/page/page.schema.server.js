@@ -1,6 +1,6 @@
 const mongoose = rquuire("mongoose");
 
-const pageSchema = mongoose.Schema(
+const PageSchema = mongoose.Schema(
 
 {
     name: String,
@@ -11,5 +11,5 @@ const pageSchema = mongoose.Schema(
     { collection: "pages" }
 
 );
-module.exports = pageSchema
+module.exports = PageSchema
 

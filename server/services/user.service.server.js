@@ -39,7 +39,7 @@ const userModel = require("../models/user/user.model.server");
                 
      }
         if (username) {
-           const data = await userModel.findUserByUsername(username); 
+           const data = await userModel.findUserByUsername(username);
             res.json(data);
        return
     }    
@@ -49,7 +49,7 @@ const userModel = require("../models/user/user.model.server");
        const user = req.body;
      const uid = user._id;
      const date = await
-     userModel. UserModel.updateUser(uid, user);
+     userModel.updateUser(uid, user);
         res.json(data);
         return;
     }
