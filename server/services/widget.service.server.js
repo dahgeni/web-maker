@@ -13,13 +13,13 @@ module.exports = function(app) {
 
    
      async function createWidget(req, res) {
-       let widget = req.body;
-       const data = await widgetModel.createWidget(wiget)
-        res.json(widget); 
+      let widget = req.body;
+       const data = await widgetModel.createWidget(widget)
+        res.json(data); 
      }
      async function findAllWidgetsForPage(req, res)
       {
-   const pid = req.params["pid"];
+     const pid = req.params["pid"];
       const data = await 
       websiteModel.findAllwidgetForPage(pid);
       res.json(data);
@@ -28,8 +28,8 @@ module.exports = function(app) {
      
     async function findWidgetById(req, res) {
      const wgid = req.params["wgid"];
-     const widget = selectWidgetById(wgid);
-     res,json(widget);
+     const data = widgetModel.findById(wgid);
+     res,json(data);
     }
   }
       

@@ -4,12 +4,12 @@ const WidgetModel = mongoose.model("widgetModel", WidgetSchema);
 
 WidgetModel.createWidget =
  createWidget;
-WidgetModel.findAllwidgetsForPage = findAllWidgetsForPage
-WidgetModel.findwidgetbyId = 
+WidgetModel.findAllWidgetsForPage = findAllWidgetsForPage
+WidgetModel.findWidgetbyId = 
 findWidgetById;
 WidgetModel.updateWidget = 
 updateWidget;
-WidgetModel.deletewidget = 
+WidgetModel.deleteWidget = 
 deleteWidget;
 
 function createWidget(widget) {
@@ -31,4 +31,4 @@ function deleteWidget(wgid) {
     return widgetModel.remove({ _id: wgid});
 
 }
-module.exports = Widgetmodel;
+module.exports = WidgetModel;
