@@ -48,10 +48,9 @@ const userModel = require("../models/user/user.model.server");
    async function updateUser(req, res) {
        const user = req.body;
      const uid = user._id;
-     const date = await
+     const data = await
      userModel.updateUser(uid, user);
         res.json(data);
-        return;
     }
 };
            
