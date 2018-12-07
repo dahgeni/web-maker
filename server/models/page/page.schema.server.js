@@ -1,14 +1,14 @@
-const mongoose = rquuire("mongoose");
+const mongoose = require("mongoose");
 
 const PageSchema = mongoose.Schema(
 
 {
     name: String,
-    websiteId: { type: mongoose.Types.ObjectId, ref: "pageModel" },
+    websiteId: { type: mongoose.Schema.Types.ObjectId, ref: "WebsiteModel" },
     description: String,
     dateCreated: { type: Date, default: Date.now }
 },
-    { collection: "pages" }
+    { collection: "page" }
 
 );
 module.exports = PageSchema

@@ -39,6 +39,5 @@ createPage(){
     this.router.navigate(["user", this.uid, "website", this.wid, "page"]);
 
   });
-  this.router.navigate(["user", this.uid, "website", this.wid, "page"])
 }
 }

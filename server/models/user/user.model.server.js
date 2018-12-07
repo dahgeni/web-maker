@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const UserSchema = require ("./user.schema.server");
-const UserModel = mongoose.model("userModel", UserSchema);
+const UserModel = mongoose.model("UserModel", UserSchema);
 
 UserModel.createUser = createUser;
 UserModel.findUserById = findUserById;

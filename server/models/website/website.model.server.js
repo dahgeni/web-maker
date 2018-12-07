@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const WebsiteSchema = require ("./website.schema.server")
-const WebsiteModel = mongoose.model("websiteModel", WebsiteSchema);
+let WebsiteModel = mongoose.model("WebsiteModel", WebsiteSchema);
 
 WebsiteModel.
 createWebsiteForUser =
@@ -25,12 +25,12 @@ function findWebsiteById(wid) {
 }
 
 function updateWebsite(wid, website) {
-    return WebsiteModel.update({_id: wid},
+    return WebsiteModel.updateOne({_id: wid},
         website);  
 }
 
 function deleteWebsite(wid) {
-    return WebsiteModel.remove({ _id: wid});
+    return WebsiteModel.deleteOne({ _id: wid});
 
 }
 module.exports = WebsiteModel;

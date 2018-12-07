@@ -11,7 +11,7 @@ export class PageService {
     baseUrl = environment.baseUrl;
   
     createPage(page: Page) {
-        const url =this.baseUrl + "/api/page";
+        const url = this.baseUrl + "/api/page";
         return this.http.post(url, page).pipe(map((res: Response) => {
           return res.json();
           })
@@ -27,16 +27,17 @@ export class PageService {
            
    }       
     findPageById(pageId: string) {
-       const url =this.baseUrl + "/api/page/" + pageId;
-       return this.http. get(url).pipe(map((res: Response) => {
+       const url = this.baseUrl + "/api/page/" + pageId;
+       return this.http.get(url).pipe(map((res: Response) => {
          return res.json();
          })
        );
           
     }
     updatePage(page: Page) {
-        const url = this.baseUrl + "/api/page/"; return this.http. put(url, page).pipe(map((res: Response) => {
-        return res.json();
+        const url = this.baseUrl + "/api/page/"; 
+        return this.http.put(url, page).pipe(map((res: Response) => {
+          return res.json();
         })
       );
 

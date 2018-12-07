@@ -9,8 +9,9 @@
 <!--right nav-->
     <div class="col-sm-8">
         <a class="color-white d-sm-none" routerLink="/user/{{uid}}/website"><i class="fas fa-chevron-left"></i></a>
+        <a class="color-white padding-left" routerLink="/user/{{uid}}/website/{wid}}"></a>
             <h5 class="display-inline">Edit Website</h5>
-            <button class="color-white float-right btn bg-transparent" form= "myForm"><i class="fas fa-check"></i></button>
+            <button class="color-white float-right btn bg-transparent" form="myForm"><i class="fas fa-check"></i></button>
     </div>
 </nav>
  <!--list and forms-->
@@ -30,7 +31,7 @@
      <!--right form-->
     <div class="col-sm-8">
         <div class="container-fluid">
-        <form id="myform" myForm="ngForm" (ngSubmit)="update()"> 
+        <form id="myForm" myForm="ngForm" (ngSubmit)="update()"> 
             <div class="form-group">
                 <label><b>Name</b></label>
                 <input id="name" class="form-control" type="text" placeholder="name of the website" [(ngModel)]="website.name" name="name"> 

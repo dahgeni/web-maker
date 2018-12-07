@@ -16,7 +16,7 @@ function createWidget(widget) {
     return WidgetModel.create(widget);
  }
 function findAllWidgetsForPage(pid) {
-    return widgetModel.create({ developerId: pid });
+    return widgetModel.find({ pageById: pid });
 }
 function findWidgetById(wgid) {
     return widgetModel.findById(wgid);
@@ -28,7 +28,7 @@ function updateWidget(wgid, widget) {
 }
 
 function deleteWidget(wgid) {
-    return widgetModel.remove({ _id: wgid});
+    return widgetModel.deleteOne({ _id: wgid});
 
 }
 module.exports = WidgetModel;

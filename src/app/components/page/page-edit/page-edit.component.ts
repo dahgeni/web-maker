@@ -16,7 +16,6 @@ export class PageEditComponent implements OnInit {
     name: "",
     title: "",
     websiteId: ""
-
   };
      
   constructor(
@@ -30,9 +29,10 @@ export class PageEditComponent implements OnInit {
       this.uid = params["uid"];
       this.wid = params["wid"];
       this.pid = params["pid"];
-     this.page = (this.page),this.pageService.findPageById(this.pid).subscribe(
+     this.pageService.findPageById(this.pid).subscribe(
        (page: Page) => {
          this.page = page
+         console.log(this.page);
        }
      )
     });
