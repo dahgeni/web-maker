@@ -1,7 +1,11 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg-light">
-    <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-chevron-left"></i></a> 
-    <a class="navbar-brand" routerLink="/user/{{uid}}/website/{{wid}}/page/widget/{{wgid}}">Edit Widget</a>
+
+    <a class="color-black" 
+    routerLink="/user/{{uid}}/website/{wid}/page/{{pid}}widget"><i class="fas fa-chevron-left"></i></a> 
+
+    <a class="navbar-brand" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}">Edit Widget</a>
+
    <button class="color-black btn bg-transparent" form="myForm" type="submit"><i class="fas fa-check"></i></button>
 </nav>
 <!--form-->

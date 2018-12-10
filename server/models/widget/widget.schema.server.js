@@ -1,8 +1,8 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var WidgetSchema = mongoose.Schema(
+const WidgetSchema = mongoose.Schema(
     {
-     pageId: { type: mongoose.Schema.Types.ObjectId, ref: "WidgetModel" },
+     pageId: { type: mongoose.Schema.Types.ObjectId, ref: "PageModel" },
      widgetType: {type: String, enum: ['HEADING','IMAGE','YOUTUBE']}, 
      name: String,
      text: String,
@@ -11,6 +11,7 @@ var WidgetSchema = mongoose.Schema(
      size: Number,
      dateCreated: { type: Date, default: Date.now }
 },  
-   {collections: Widgets}
-)
+   {collections: "widget"}
+
+);
 module.exports = WidgetSchema

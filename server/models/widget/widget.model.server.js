@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const WidgetSchema = require ("widget.schema.server")
+const WidgetSchema = require ("./widget.schema.server");
 const WidgetModel = mongoose.model("widgetModel", WidgetSchema);
 
 WidgetModel.createWidget =
@@ -16,19 +16,19 @@ function createWidget(widget) {
     return WidgetModel.create(widget);
  }
 function findAllWidgetsForPage(pid) {
-    return widgetModel.find({ pageById: pid });
+    return WidgetModel.find({ pageById: pid });
 }
 function findWidgetById(wgid) {
-    return widgetModel.findById(wgid);
+    return WidgetModel.findById(wgid);
 }
 
 function updateWidget(wgid, widget) {
-    return widgetModel.update({_id: wgid},
+    return WidgetModel.update({_id: wgid},
         widget);  
 }
 
 function deleteWidget(wgid) {
-    return widgetModel.deleteOne({ _id: wgid});
+    return WidgetModel.deleteOne({_id: wgid});
 
 }
 module.exports = WidgetModel;

@@ -24,7 +24,7 @@ function updatePage(pid, page){
     return PageModel.updateOne({_id: pid}, page);
 }
 function deletePage(pid){
-return PageModel.deleteOne({_id:pid});
+return PageModel.deleteOne({_id: pid});
 }
 
 module.exports = PageModel;

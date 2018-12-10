@@ -1,14 +1,15 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg- light">
-    <a class="color-black" routerLink="/user/{{uid}}/website/{{wid}}/{{pid}}/widget"><i class="fas fa-chevron-left"></i></a> 
-    <a class="navbar-brand"  routerLink="/user/{{uid}}/website/{{wid}}/page/widget/{{wgid}}"><strong>Edit Widget</strong></a>
+    <a class="color-black" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-chevron-left"></i></a> 
+
+    <a class="navbar-brand"  routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{wgid}}"><strong>Edit Widget</strong></a>
+
    <button form="myForm" class="color-black btn bg-transparent"><i class="fas fa-check" ></i></button>
     </nav>
     <!--form-->
     <form id="myForm" #myForm="ngForm" (ngSubmit)= "update()">
     <div class="container">
        
-
       
         <!--text-->
         <div class="form-group">
@@ -22,7 +23,7 @@
                 <input name="size" [(ngModel)]="widget.size" type="number" id="sze"
                 class="form-control">
             </div>
-            <a routerLink="/user/{{uid}}/website/{{wid}}/{{pid}}/widget" class="btn btn-danger btn-block"><strong>Delete</strong></a>
+            <button type= "button" (click)="delete()" class= "btn-danger btn-block"><strong>Delete</strong></button>
 
 
     </div>

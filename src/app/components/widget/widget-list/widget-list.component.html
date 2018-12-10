@@ -8,14 +8,12 @@
 
     <!--main content-->
     <div class="container-fluid">
-        <div>         
-            <h1>HOWDY NEIGHBOR!</h1>
-        </div>
-        <div>
+                       
         <!-- Heading Widget-->
         <div *ngFor= "let widget of widgets">
             <!--Icon-->
             <div class="absolute right">
+                
                 <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/{{widget._id}}"><i class="fas fa-cog "></i></a>
                 <a routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-bars"></i></a>
                 </div>
