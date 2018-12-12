@@ -13,7 +13,13 @@ export class WidgetImageComponent implements OnInit {
   wid; string;
   pid: string;
   wgid: string;
-  widget: Widget;
+  widget: Widget = {
+    url: "",
+    width: "",
+    widgetType: "IMAGE",
+    pageId: ""
+
+  };
   
     constructor(
       private activatedRoute: ActivatedRoute,

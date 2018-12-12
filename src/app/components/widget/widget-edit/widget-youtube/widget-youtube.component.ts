@@ -14,9 +14,14 @@ export class WidgetYoutubeComponent implements OnInit {
   wid; string;
   pid: string;
   wgid: string;
-  widget:Widget;
+  widget:Widget = {
+    url: "",
+    width: "",
+    widgetType: "IMAGE",
+    pageId: ""
+  };
   
-    constructor(
+      constructor(
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private widgetService: WidgetService
