@@ -29,14 +29,14 @@ module.exports = function(app) {
      
     async function findWidgetById(req, res) {
      const wgid = req.params["wgid"];
-     const data = widgetModel.findById(wgid);
-     res,json(data);
-    }
+     const data = await widgetModel.findById(wgid);
+     res.json(data);
+    
   }
       
     async function updateWidget(req, res) {
       const widget = req.body;
-        const wid = widget._id;
+        const wgid = widget._id;
         const data = await widgetModel.updateWidget(wgid, widget);
         res.json(data);
     }
@@ -46,7 +46,9 @@ module.exports = function(app) {
     const data = await
     widgetModel.deleteWidget(wgid);
     res.json(data);
-      
+  
+   }
+        
     };
   
 

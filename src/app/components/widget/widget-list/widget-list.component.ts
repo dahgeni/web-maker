@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { WidgetService } from 'src/app/services/widget.service.client';
 import { Widget } from 'src/app/models/widget.model.client';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -30,18 +30,19 @@ export class WidgetListComponent implements OnInit {
       this.pid = params["pid"];
      this.widgetService.findWidgetByPageId(this.pid).subscribe(
        (widgets: Widget[]) => {
-
-       }
-     );
+        this.widgets = widgets;
+       
+       });
 
     });
   }
 parseYoutubeSrc(src) {
   //transfer video url into embeded wideo url
-  let embedUrl: string = "http://www.youtube.com/embed/";
-  const splitUrl: string[] = src.split('/');
+  let embedUrl: string = "https://www.youtube.com/embed/";
+  const splitUrl: string[] = src.split("/");
   embedUrl += splitUrl[splitUrl.length - 1];
   //telling the browser this src is safe
   return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  
 }
 }

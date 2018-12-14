@@ -10,8 +10,14 @@ import { Widget } from 'src/app/models/widget.model.client';
 })
 export class WidgetEditComponent implements OnInit {
   wgid: string;
-  widget: Widget;
-
+  widget: Widget = {
+    text: "",
+    widgetType: "",
+    size: 0,
+    pageId: "",
+    url: "",
+    width: ""
+  };
 
   constructor(
     private ActivatedRoute: ActivatedRoute, 

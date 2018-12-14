@@ -15,13 +15,13 @@ export class WidgetService {
 
       createWidget(widget: Widget) {
         const url = this.baseUrl + "/api/widget";
-        return this.http. post(url, widget).pipe(map((res: Response) => {
+        return this.http.post(url, widget).pipe(map((res: Response) => {
           return res.json();
           })
         );
          
       }
-      findWidgetByPageId(pageId) {
+      findWidgetByPageId(pageId: string) {
         const url = this.baseUrl + `/api/page/${pageId}/widget`;
         return this.http.get(url).pipe(map((res: Response) => {
           return res.json();
@@ -30,12 +30,12 @@ export class WidgetService {
        
       }
      findWidgetById(widgetId: string) {
-       const url = this.baseUrl + "/api/widget/:wgid/" + widgetId; 
+       const url = this.baseUrl + "/api/widget/" + widgetId; 
        return this.http.get(url).pipe(map((res: Response) => {
          return res.json();
          })
        );   
-                 
+               
     }
     updateWidget(widget: Widget) {
        const url = this.baseUrl + "/api/widget"; return this.http.put(url, widget).pipe(map((res: Response) => {
@@ -44,12 +44,12 @@ export class WidgetService {
        );   
 
      }
-    deletewidget(widgetId: string) {
-       const url = this.baseUrl + "/api/widget/" + widgetId; 
+    deleteWidget(widgetId: string) {
+       const url = this.baseUrl + `/api/widget/${widgetId}`
        return this.http.delete(url).pipe(map((res: Response) => {
          return res.json();
           })
         );   
     }
-
+    
 }

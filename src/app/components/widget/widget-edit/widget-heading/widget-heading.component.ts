@@ -10,10 +10,18 @@ import { Widget } from 'src/app/models/widget.model.client';
 })
 export class WidgetHeadingComponent implements OnInit {
 uid: string;
-wid; string;
+wid: string;
 pid: string;
 wgid: string;
-widget: Widget;
+widget: Widget  = {
+  _id: "",
+  widgetType: "",
+  pageId: "",
+  text: "",
+  size: 1,
+  width: "",
+  url: ""
+};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -47,7 +55,7 @@ update() {
   }
   
 delete() {
-  this.widgetService.deletewidget(this.wgid).subscribe(
+  this.widgetService.deleteWidget(this.wgid).subscribe(
     (widgets: Widget[]) => {
       this.router.navigate([
         "user", 

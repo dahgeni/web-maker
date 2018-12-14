@@ -39,6 +39,7 @@ export class RegisterComponent implements OnInit {
               firstName: "",
               lastName: "",
               email: ""
+              
             };
             this.userService.register(newUser).subscribe((data: User) => {
               this.sharedService.user = data;

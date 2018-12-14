@@ -35,7 +35,7 @@ export class WebsiteService {
     }
          
         
-  findWebsiteById(websiteId: String) {
+  findWebsiteById(websiteId: string) {
       const url = this.baseUrl + "/api/website/" + websiteId;
       return this.http.get(url).pipe(
         map((res: Response) => {
@@ -46,17 +46,17 @@ export class WebsiteService {
     }
 
          
-         updateWebsite(website: Website) {
-         const url = this.baseUrl +"/api/website/";  
-         return this.http.put(url, website).pipe(
-             map((res: Response) => {
-                 return res.json();
-             })         
-           );              
+   updateWebsite(website: Website) {
+       const url = this.baseUrl +"/api/website/";  
+        return this.http.put(url, website).pipe(
+          map((res: Response) => {
+              return res.json();
+           })         
+        );              
          
-     }  
-     deleteWebsite(websiteId) {
-         const url = this.baseUrl + "/api/website/" + websiteId;
+   }  
+     deleteWebsite(websiteId: string) {
+         const url = this.baseUrl + `/api/website/${websiteId}`
          return this.http.delete(url).pipe(
             map((res: Response) => {
               return res.json();

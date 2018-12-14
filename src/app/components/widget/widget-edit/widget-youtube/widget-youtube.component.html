@@ -1,23 +1,26 @@
 <!--navbar-->
 <nav class="navbar navbar-light fixed-top bg- light">
-    <a class="color-black" routerLink="/user/:uid/website/:wid/:pid/widget"><i class="fas fa-chevron-left"></i></a> 
+
+    <a class="color-black" routerLink="/user/{{uid}}/website/{wid}/page/{{pid}}/widget"><i class="fas fa-chevron-left"></i></a> 
+
     <a class="navbar-brand"  routerLink="/user/{{uid}}/website/{{wid}}/page/widget/{{wgid}}">Edit Widget</a>
+
    <button class="color-black btn bg-transparent" form="myForm" type="submit"><i class="fas fa-check"></i></button>
     </nav>
 <!--form-->
-<div class="container">
+<div class="container-fliud">
 
     <form id="myForm" #myForm= "ngForm" (ngSubmit)="update()">
         
         <!--url-->
         <div class="form-group">
             <label for="url"><b>Url</b></label>
-            <input placeholder="Image Url" [(ngModel)]="widget.url" type="text" id="url" class="form-control">
+            <input name='url' placeholder="Image Url" [(ngModel)]="widget.url" type="text" id="url" class="form-control"/>
         </div>           
         <!--width-->
         <div class="form-group">
             <label for="width"><b>Width</b></label>
-            <input [(ngModel)]="widget.width"name="width" placeholer="Image Width" name="width"placeholder="Image Widget" type="text" id="width" class="form-control">
+            <input [(ngModel)]="widget.width" name="width" placeholer="Image Width" name="width"placeholder="Image Widget" type="text" id="width" class="form-control"/>
         </div>   
         <button type="button" (click)="delete()" class= "btn btn-danger btn-block">Delete</button>        
     </form>

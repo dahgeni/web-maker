@@ -16,15 +16,15 @@ function createWidget(widget) {
     return WidgetModel.create(widget);
  }
 function findAllWidgetsForPage(pid) {
-    return WidgetModel.find({ pageById: pid });
+    return WidgetModel.find({ pageId: pid });
 }
 function findWidgetById(wgid) {
     return WidgetModel.findById(wgid);
 }
 
 function updateWidget(wgid, widget) {
-    return WidgetModel.update({_id: wgid},
-        widget);  
+    return WidgetModel.updateOne({ _id: wgid }, widget);
+   
 }
 
 function deleteWidget(wgid) {
